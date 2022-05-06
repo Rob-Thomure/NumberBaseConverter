@@ -1,10 +1,8 @@
 package com.company;
 
-import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
         boolean exit = false;
         while (!exit) {
@@ -21,9 +19,8 @@ public class Main {
                             sourceBase, targetBase);
                     String number = scanner.nextLine().trim();
                     if (!number.equals("/back")) {
-                        BigInteger decimal = Converters.convertToDecimal(number, sourceBase);
-                        String result = Converters.convertFromDecimal(decimal, targetBase);
-                        System.out.printf("Conversion result: %s%n%n", result);
+                        String bigDecimal = Converters.convertNumber(number, sourceBase, targetBase);
+                        System.out.printf("Conversion result: %s%n%n", bigDecimal);
                     } else {
                         goBack = true;
                     }
